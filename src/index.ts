@@ -104,7 +104,7 @@ app.post("/api/students", (req: Request, res: Response) => {
 
 // PUT /students, body = {studentId}
 // Update specified student
-app.put("/students", (req: Request, res: Response) => {
+app.put("/api/students", (req: Request, res: Response) => {
   try {
     const body = req.body as Student;
 
@@ -150,7 +150,7 @@ app.put("/students", (req: Request, res: Response) => {
 });
 
 // DELETE /students, body = {studentId}
-app.delete("/students", (req: Request, res: Response) => {
+app.delete("/api/students", (req: Request, res: Response) => {
   try{
     const body = req.body;
     
@@ -191,7 +191,7 @@ app.delete("/students", (req: Request, res: Response) => {
 });
 
 // GET /api/me
-app.get("/api/me", (res: Response) =>{
+app.get("/api/me", (req: Request, res: Response) =>{
   return res.status(200).json({
     ok: true,
     fullname: "Lalitnapas Pasasuk",
